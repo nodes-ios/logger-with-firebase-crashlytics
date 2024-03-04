@@ -9,8 +9,8 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "logger-with-firebase-crashlytics",
-            targets: ["logger-with-firebase-crashlytics"]),
+            name: "LoggerWithFirebaseCrashlytics",
+            targets: ["LoggerWithFirebaseCrashlytics"]),
     ],
     dependencies: [
         .package(url: "https://github.com/firebase/firebase-ios-sdk.git", from: "10.21.0"),
@@ -20,7 +20,7 @@ let package = Package(
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "logger-with-firebase-crashlytics",
+            name: "LoggerWithFirebaseCrashlytics",
             dependencies: [
                 .product(name: "Logger", package: "logger"),
                 .product(name: "FirebaseCrashlytics", package: "firebase-ios-sdk"),
@@ -28,6 +28,6 @@ let package = Package(
             resources: []),
         .testTarget(
             name: "logger-with-firebase-crashlyticsTests",
-            dependencies: ["logger-with-firebase-crashlytics"]),
+            dependencies: ["LoggerWithFirebaseCrashlytics"]),
     ]
 )
